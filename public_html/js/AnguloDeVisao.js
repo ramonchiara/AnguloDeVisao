@@ -91,7 +91,7 @@ anguloDeVisao.directive('fSlider', function() {
             element.slider({
                 min: 0,
                 value: scope.$parent.f,
-                max: 2000,
+                max: 2500,
                 step: 1,
                 slide: function(event, ui) {
                     scope.f = ui.value;
