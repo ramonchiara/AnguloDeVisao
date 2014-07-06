@@ -16,15 +16,21 @@
 
             <table class="table table-striped table-responsive">
                 <tr>
-                    <th>Distância Focal (Full Frame / 35mm)</th>
+                    <th>Sensor</th>
+                    <th>Distância Focal</th>
                     <th>Ângulo de Visão</th>
                 </tr>
                 <tr>
+                    <td>
+                        <select class="form-control" ng-model="sensor" ng-change="updateSensor()">
+                            <option ng-repeat="s in sensors" value="{{$index}}">{{s.name}} ({{s.h}}mm x {{s.v}}mm)</option> 
+                        </select>
+                    </td>
                     <td>{{f}}mm<div id="f" class="f-slider"></div></td>
                     <td>{{alfa}}°<div id="alfa" class="alfa-slider"></div></td>
                 </tr>
                 <tr>
-                    <td colspan="2" id="canvasTd"><canvas id="canvas"></canvas></td>
+                    <td colspan="3" id="canvasTd"><canvas id="canvas"></canvas></td>
                 </tr>
             </table>
 
